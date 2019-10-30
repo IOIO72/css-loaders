@@ -1,5 +1,5 @@
-@background: hsl(179,88%,41%);
-@foreground: #FFF;
+$background: hsl(179,88%,41%);
+$foreground: #FFF;
 
 .load3 {
 
@@ -10,12 +10,12 @@
     width:11em;
     height:11em;
     border-radius:50%;
-    background: @foreground;
-    background: -moz-linear-gradient(left,  fade(@foreground,100%) 10%, fade(@foreground,0%) 42%);
-    background: -webkit-linear-gradient(left,  fade(@foreground,100%) 10%,fade(@foreground,0%) 42%);
-    background: -o-linear-gradient(left,  fade(@foreground,100%) 10%,fade(@foreground,0%) 42%);
-    background: -ms-linear-gradient(left,  fade(@foreground,100%) 10%,fade(@foreground,0%) 42%);
-    background: linear-gradient(to right,  fade(@foreground,100%) 10%,fade(@foreground,0%) 42%);
+    background: $foreground;
+    background: -moz-linear-gradient(left,  rgba($foreground,1) 10%, rgba($foreground,0) 42%);
+    background: -webkit-linear-gradient(left,  rgba($foreground,1) 10%,rgba($foreground,0) 42%);
+    background: -o-linear-gradient(left,  rgba($foreground,1) 10%,rgba($foreground,0) 42%);
+    background: -ms-linear-gradient(left,  rgba($foreground,1) 10%,rgba($foreground,0) 42%);
+    background: linear-gradient(to right,  rgba($foreground,1) 10%,rgba($foreground,0) 42%);
     position: relative;
     -webkit-animation:load3 1.4s infinite linear;
     animation:load3 1.4s infinite linear;
@@ -26,7 +26,7 @@
     &:before {
       width:50%;
       height:50%;
-      background: @foreground;
+      background: $foreground;
       border-radius: 100% 0 0 0;
       position:absolute;
       top:0;
@@ -35,7 +35,7 @@
     }
 
     &:after {
-      background:@background;
+      background:$background;
       width:75%;
       height:75%;
       border-radius:50%;
@@ -49,10 +49,7 @@
 
 }
 
-@-webkit-keyframes load3 {.load3-frames;}
-@keyframes load3 {.load3-frames;}
-
-.load3-frames() {
+@mixin load3-frames() {
 
   0% {
   	-webkit-transform:rotate(0deg);
@@ -65,3 +62,6 @@
   }
 
 }
+
+@-webkit-keyframes load3 {@include load3-frames;}
+@keyframes load3 {@include load3-frames;}

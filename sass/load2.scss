@@ -1,5 +1,5 @@
-@background: hsl(179,88%,41%);
-@foreground: #FFF;
+$background: hsl(179,88%,41%);
+$foreground: #FFF;
 
 .load2 {
 
@@ -10,7 +10,7 @@
   }
 
   .loader {
-    color:@foreground;
+    color:$foreground;
     font-size:11px;
     text-indent:-99999em;
     margin:55px auto;
@@ -31,7 +31,7 @@
     &:before {
       width:5.2em;
       height:10.2em;
-      background: @background;
+      background: $background;
       border-radius: 10.2em 0 0 10.2em;
       top:-0.1em;
       left:-0.1em;
@@ -44,7 +44,7 @@
     &:after {
       width:5.2em;
       height:10.2em;
-      background: @background;
+      background: $background;
       border-radius: 0 10.2em 10.2em 0;
       top:-0.1em;
       left:4.9em;
@@ -58,10 +58,7 @@
 
 }
 
-@-webkit-keyframes load2 {.load2-frames;}
-@keyframes load2 {.load2-frames;}
-
-.load2-frames() {
+@mixin load2-frames() {
 
   0% {
     -webkit-transform:rotate(0deg);
@@ -74,3 +71,6 @@
   }
 
 }
+
+@-webkit-keyframes load2 {@include load2-frames;}
+@keyframes load2 {@include load2-frames;}

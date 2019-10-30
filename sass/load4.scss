@@ -1,9 +1,9 @@
-@foreground: #FFF;
+$foreground: #FFF;
 
 .load4 {
 
   .loader {
-    color:@foreground;
+    color:$foreground;
     font-size:20px;
     margin:100px auto;
     width:1em;
@@ -19,10 +19,8 @@
   }
 
 }
-@-webkit-keyframes load4 {.load4-frames;}
-@keyframes load4 {.load4-frames;}
 
-.load4-frames() {
+@mixin load4-frames() {
 
   0%,
   100% {
@@ -114,3 +112,6 @@
   }
 
 }
+
+@-webkit-keyframes load4 {@include load4-frames;}
+@keyframes load4 {@include load4-frames;}

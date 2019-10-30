@@ -1,4 +1,4 @@
-@foreground: #fff;
+$foreground: #fff;
 
 .load7 {
 
@@ -15,7 +15,7 @@
   }
 
   .loader {
-    color:@foreground;
+    color:$foreground;
     font-size:10px;
     margin:80px auto;
     position:relative;
@@ -47,10 +47,7 @@
 
 }
 
-@-webkit-keyframes load7 {.load7-frames;}
-@keyframes load7 {.load7-frames;}
-
-.load7-frames() {
+@mixin load7-frames() {
 
   0%,
   80%,
@@ -63,3 +60,6 @@
   }
 
 }
+
+@-webkit-keyframes load7 {@include load7-frames;}
+@keyframes load7 {@include load7-frames;}

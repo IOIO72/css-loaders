@@ -1,6 +1,6 @@
 .load3 .loader {
   font-size: 10px;
-  margin: 30% auto;
+  margin: 50px auto;
   text-indent: -9999em;
   width: 11em;
   height: 11em;
@@ -14,11 +14,14 @@
   position: relative;
   -webkit-animation: load3 1.4s infinite linear;
   animation: load3 1.4s infinite linear;
+  -webkit-transform: translateZ(0);
+  -ms-transform: translateZ(0);
+  transform: translateZ(0);
 }
 .load3 .loader:before {
   width: 50%;
   height: 50%;
-  background: #FFF;
+  background: #ffffff;
   border-radius: 100% 0 0 0;
   position: absolute;
   top: 0;
@@ -26,7 +29,7 @@
   content: '';
 }
 .load3 .loader:after {
-  background: #0dcecb;
+  background: #0dc5c1;
   width: 75%;
   height: 75%;
   border-radius: 50%;

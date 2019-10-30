@@ -1,9 +1,9 @@
-@foreground: #fff;
+$foreground: #fff;
 
 .load6 {
 
   .loader {
-    color:@foreground;
+    color:$foreground;
     font-size:90px;
     text-indent:-9999em;
     overflow: hidden;
@@ -20,10 +20,8 @@
   }
 
 }
-@-webkit-keyframes load6 {.load6-frames;}
-@keyframes load6 {.load6-frames;}
 
-.load6-frames() {
+@mixin load6-frames() {
 
   0% {
   -webkit-transform:rotate(0deg);
@@ -84,5 +82,8 @@
     0 -0.83em 0 -0.46em,
     0 -0.83em 0 -0.477em;
   }
-  
+
 }
+
+@-webkit-keyframes load6 {@include load6-frames;}
+@keyframes load6 {@include load6-frames;}
